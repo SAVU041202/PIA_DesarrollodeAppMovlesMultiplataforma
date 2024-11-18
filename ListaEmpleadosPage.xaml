@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+             x:Class="EmpleadosApp.vistas.Empleado.ListaEmpleadosPage"
+             NavigationPage.HasNavigationBar="False">
+             
+    <ContentPage.Content>
+ 
+        <Grid BackgroundColor="#EEEEEE" Margin="0" Padding="0" x:Name="gridRows">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
+                <!-- Primera columna -->
+                <RowDefinition Height="40" />
+                <!-- Segunda columna -->
+                <RowDefinition Height="*"/>
+                <!-- Segunda columna -->
+            </Grid.RowDefinitions>
+         
+            
+        <Grid Grid.Row="0"
+            VerticalOptions="Start"
+           
+            HeightRequest="50"
+            Padding="0,10"
+            RowSpacing="10"
+            ColumnSpacing="0"
+            ColumnDefinitions="265,*,*"
+              BackgroundColor="#87A2FB"
+            >
+
+            <Label FontSize="20" FontAttributes="Bold" Text="Lista de empleados" TextColor="#6F38C5" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0" Padding="15,0"></Label>
+
+
+            <ImageButton x:Name="btnAgregar" HeightRequest="30" WidthRequest="30" Source="add.png" HorizontalOptions="End" Grid.Column="1" BackgroundColor="Transparent" Clicked="AgregarTBI_Clicked" VerticalOptions="Center"></ImageButton>
+
+
+                <ImageButton x:Name="btnLogOut" Clicked="btnLogOut_Clicked"  HeightRequest="30" WidthRequest="30" Source="apagar.png" HorizontalOptions="Center" Grid.Column="2" BackgroundColor="Transparent" VerticalOptions="Center"></ImageButton>
+
+            </Grid>
+
+            <SearchBar Grid.Row="1" Placeholder="Buscar" x:Name="txtBuscar" SearchButtonPressed="TxtBuscar_SearchButtonPressed" TextChanged="txtBuscar_TextChanged" Margin="0,0,0,10" TextColor="#6F38C5" HeightRequest="45">
+
+            </SearchBar>
+
+
+
+            <ScrollView Grid.Row="2" Margin="0" Padding="0" >
+                <StackLayout >
+
+                    <ListView x:Name="EmpleadosListView" ItemsSource="{Binding listaEmpleados}" HasUnevenRows="True" ItemTapped="EmpleadosListView_ItemTapped" IsRefreshing="True"
+                          IsPullToRefreshEnabled="True" VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" >
+                                <StackLayout HorizontalOptions="StartAndExpand" Padding="15" >
+                                    <Label FontSize="17" FontAttributes="Bold" TextColor="#87A2FB">
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding nombreEmpleado}"/>
+                                                <Span Text=" "/>
+                                                <Span Text="{Binding apellidoPaterno}"/>
+                                                <Span Text=" "/>
+                                                <Span Text="{Binding apellidoMaterno}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                    <Label Text="{Binding puesto}" FontSize="15" TextColor="#6F38C5"/> 
+                                </StackLayout>
+
+                                <StackLayout VerticalOptions="Center" HorizontalOptions="EndAndExpand" Padding="0,0,10,0">
+                                    <Image Source="editar.png" HeightRequest="30" WidthRequest="30">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="btnEditar_Tapped" CommandParameter="{Binding idEmpleado}" x:Name="btnEditar"></TapGestureRecognizer>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Image Source="borrar.png" HeightRequest="30" WidthRequest="30">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="btnBorrar_Tapped" CommandParameter="{Binding idEmpleado}" x:Name="btnBorrar"></TapGestureRecognizer>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+
+                                </StackLayout>
+                                
+                             
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
