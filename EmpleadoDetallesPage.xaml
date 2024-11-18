@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmpleadosApp.vistas.Empleado.EmpleadoDetallesPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#EEEEEE" >
+            <Grid
+            BackgroundColor="#87A2FB"
+            VerticalOptions="Start"
+            HeightRequest="50"
+            Padding="0,10"
+            RowSpacing="10"
+            ColumnSpacing="0"
+            ColumnDefinitions="*,270">
+
+                <ImageButton x:Name="btnRegresar" BackgroundColor="Transparent" HeightRequest="35" WidthRequest="35" Source="atras.png" HorizontalOptions="Start" Grid.Column="0"  Clicked="RegresarTBI_Clicked" VerticalOptions="Center"  Margin="20,0"></ImageButton>
+
+                <Label  FontSize="20" FontAttributes="Bold" Text="Información adicional" TextColor="#6F38C5" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="1" Margin="20,0"></Label>
+
+
+            </Grid>
+
+            <StackLayout Spacing="25" Padding="15,20">
+                <Label x:Name="lblNombre" FontSize="17">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span x:Name="lblnombre1" Text="Nombre:" FontSize="17" FontAttributes="Bold" TextColor="#87A2FB"/>
+                            <Span Text=": "/>
+                            <Span x:Name="lblNombre2" FontSize="16" TextColor="#6F38C5"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+
+                <Label x:Name="lblApellidos" FontSize="17">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span x:Name="lblApellidos1" Text="Apellidos:" FontSize="17" FontAttributes="Bold" TextColor="#87A2FB"/>
+                            <Span Text=": "/>
+                            <Span x:Name="lblApellidos2" FontSize="16" TextColor="#6F38C5"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label x:Name="lblEmail" FontSize="17">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span x:Name="lblEmail1" Text="Email:" FontSize="17" FontAttributes="Bold" TextColor="#87A2FB"/>
+                            <Span Text=": "/>
+                            <Span x:Name="lblEmail2" FontSize="16" TextColor="#6F38C5"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label x:Name="lblTelefono" FontSize="17">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span x:Name="lblTel1" Text="Teléfono:" FontSize="17" FontAttributes="Bold" TextColor="#87A2FB"/>
+                            <Span Text=": "/>
+                            <Span x:Name="lblTel2" FontSize="16" TextColor="#6F38C5"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label x:Name="lblEdad" FontSize="17">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span x:Name="lblEdad1" Text="Edad:" FontSize="17" FontAttributes="Bold" TextColor="#87A2FB"/>
+                            <Span Text=": "/>
+                            <Span x:Name="lblEdad2" FontSize="16" TextColor="#6F38C5"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Label x:Name="lblPuesto" FontSize="17">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span x:Name="lblPuesto1" Text="Puesto:" FontSize="17" FontAttributes="Bold" TextColor="#87A2FB"/>
+                            <Span Text=": "/>
+                            <Span x:Name="lblPuesto2" FontSize="16" TextColor="#6F38C5"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+
+                <Label x:Name="lblDpto" FontSize="17">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span x:Name="lblDpto1" Text="Departamento:" FontSize="17" FontAttributes="Bold" TextColor="#87A2FB"/>
+                            <Span Text=": "/>
+                            <Span x:Name="lblDpto2" FontSize="16" TextColor="#6F38C5"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
