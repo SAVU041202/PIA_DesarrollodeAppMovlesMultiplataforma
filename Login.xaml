@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EmpleadosApp.vistas.Usuario.Login"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#EEEEEE">
+            <StackLayout HorizontalOptions="Center" Margin="0,15">
+                <Image Source="perfil.png" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" Margin="20"></Image>
+                <Label Text="Iniciar sesión" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold" Margin="5" TextColor="#6F38C5"></Label>
+            </StackLayout>
+            <StackLayout>
+                <StackLayout VerticalOptions="StartAndExpand" Margin="20" Spacing="30">
+
+
+                    <Frame HeightRequest="38" BorderColor="#6F38C5" CornerRadius="15" Padding="5" BackgroundColor="#EEEEEE">
+                        <Entry x:Name="txtEmail" VerticalOptions="Start" 
+                   Placeholder="Email" PlaceholderColor="Black" TextColor="Black" FontSize="15" MaxLength="40" Keyboard="Email"/>
+                    </Frame>
+
+                    <Frame HeightRequest="38" BorderColor="#6F38C5" CornerRadius="15" Padding="5" BackgroundColor="#EEEEEE">
+                        <Entry x:Name="txtPass" VerticalOptions="Start" 
+                   Placeholder="Contraseña" PlaceholderColor="Black" TextColor="Black" FontSize="15" MaxLength="40" IsPassword="True"/>
+                    </Frame>
+
+                    <Button Clicked="btnLogin_Clicked" Text="Ingresar" x:Name="btnLogin" CornerRadius="15" TextTransform="None" FontAttributes="Bold" FontSize="Medium" BackgroundColor="#6F38C5" TextColor="White" Margin="0,25"></Button>
+
+
+                        <Label x:Name="lblRegistro" Text="¿Aún no tienes una cuenta? Registrate" Grid.Row="0" Grid.Column="0" TextColor="#6F38C5" HorizontalOptions="Center"  FontSize="15" FontAttributes="bold" >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="RegistroTap" Tapped="RegistroTap_Tapped"></TapGestureRecognizer>
+                            </Label.GestureRecognizers>
+                        </Label>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
